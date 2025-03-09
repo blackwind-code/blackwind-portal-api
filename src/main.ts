@@ -10,11 +10,12 @@ async function bootstrap() {
     .setTitle('Blackwind Portal API')
     .setDescription('API 문서 설명')
     .setVersion('1.0')
+    .addBearerAuth()
     .addTag('auth')
     .build();
     
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api-docs', app, document);
+  SwaggerModule.setup('docs', app, document);
   // Swagger 설정 종료
 
   await app.listen(3000);
